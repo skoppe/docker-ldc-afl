@@ -1,4 +1,4 @@
-FROM dlanguage/ldc
+FROM skoppe/ldc
 
 MAINTAINER Sebastiaan Koppe <mail@skoppe.eu>
 
