@@ -1,8 +1,8 @@
-FROM skoppe/docker-ldc
+FROM base/devel
 
 MAINTAINER Sebastiaan Koppe <mail@skoppe.eu>
 
-RUN apt-get update && apt-get install -y git gcc make \
+RUN apt-get update && apt-get install -y git gcc make dub ldc \
  && cd / \ 
  && git clone https://github.com/skoppe/afl \
  && cd afl \
