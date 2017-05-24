@@ -2,13 +2,11 @@ FROM base/devel
 
 MAINTAINER Sebastiaan Koppe <mail@skoppe.eu>
 
-RUN apt-get update && apt-get install -y git gcc make dub ldc \
- && cd / \ 
- && git clone https://github.com/skoppe/afl \
- && cd afl \
- && make \
- && apt-get -y autoremove git make \ 
- && rm -rf /var/cache/apt
+RUN pacman -Sy --noconfirm git gcc make dub ldc && \
+        git clone https://github.com/skoppe/afl && \
+        cd afl && \
+        make && \
+        pacman -Rns git make
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["ldc2"]
