@@ -6,7 +6,8 @@ RUN pacman -Sy --noconfirm git gcc make dub ldc && \
         git clone https://github.com/skoppe/afl && \
         cd afl && \
         make && \
-        pacman -Rns git make
+        pacman -Rns git make || \
+	true
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["ldc2"]
