@@ -9,5 +9,3 @@ RUN pacman -Sy --noconfirm git gcc make dub ldc && \
         pacman -Rns git make || \
 	true
 
-ENTRYPOINT ["/entrypoint.sh"]
-CMD ["ldc2"]
